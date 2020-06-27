@@ -1,0 +1,34 @@
+author: hobbe <https://github.com/hobbe>
+name: Demo-NTC
+description: NTC sensor demo app
+version: 1.0
+platform: esp8266
+
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
+tags:
+  - c
+  - ntc
+  - demo
+
+sources:
+  - src
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/boards
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/hobbe/mongoose-lib-ntc-thermistor
+    name: ntc-thermistor
+    version: master
+
+# Using Shelly 1PM
+build_vars:
+  FLASH_SIZE: 2097152
+  BOOT_CONFIG_ADDR: 0x1000  # To be compatible with stock firmware.
+
+manifest_version: 2020-01-29
