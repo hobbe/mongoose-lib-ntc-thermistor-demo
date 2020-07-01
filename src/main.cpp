@@ -53,9 +53,9 @@ enum mgos_app_init_result mgos_app_init(void) {
     const unsigned char pin = 0;                  // A0 on esp8266
     const double referenceResistance = 10000;     // 10k
     const double nominalResistance = 32000;       // 32k
-    const double nominalTemperatureCelsius = 20;  // 20°C
+    const double nominalTemperatureCelsius = 25;  // 25°C
     const double bValue = 3350;                   // 3350
-    const int adcResolution = 1023;               // 1023
+    const int adcResolution = 1024;               // 1024
     mgos_ntc_thermistor_begin(ntc, pin, referenceResistance, nominalResistance,
                               nominalTemperatureCelsius, bValue, adcResolution);
     LOG(LL_INFO, ("NTC Thermistor initialized"));
